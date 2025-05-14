@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclipse</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: beige;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        padding: 5vw;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        margin: 1vw;
+        text-align: center;
+        color: black;
+        font-family: cursive;
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+      }
+
+      :root {
+        --bgCont1: rgb(198, 171, 35);
+        --bgCirInner1: rgb(214, 75, 75);
+      }
+
+      .container1 {
+        width: 80vw;
+        max-width: 780px;
+        aspect-ratio: 13 / 10;
+        border-radius: 20px;
+        display: grid;
+        place-content: center;
+        background-color: var(--bgCont1);
+        animation: colorChanging 3s ease-in-out 1s infinite;
+      }
+
+      @keyframes colorChanging {
+        0% {
+          background-color: var(--bgCont1);
+        }
+        50% {
+          background-color: black;
+        }
+        100% {
+          background-color: var(--bgCont1);
+        }
+      }
+
+      .circle1 {
+        width: 32vw;
+        max-width: 250px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: var(--bgCirInner1);
+        position: relative;
+      }
+
+      .circle1::before {
+        content: "";
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        inset: 5%;
+        animation: rightToLeft1 3s ease-in-out 1s infinite;
+      }
+
+      @keyframes rightToLeft1 {
+        0% {
+          translate: 90%;
+          background-color: var(--bgCont1);
+        }
+        50% {
+          translate: 0%;
+          background-color: black;
+        }
+        100% {
+          translate: -110%;
+          background-color: var(--bgCont1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lunar Eclipse</h1>
+    <div class="container1">
+      <div class="circle1"></div>
+    </div>
+  </body>
+</html>
